@@ -12,6 +12,7 @@ class Register extends Component {
       email: "",
       companyName: "",
       companyINN: "",
+      contactPerson: "",
       companyPhone: "",
       password: "",
       errors: {}
@@ -40,6 +41,7 @@ class Register extends Component {
       email: this.state.email,
       companyName: this.state.companyName,
       companyINN: this.state.companyINN,
+      contactPerson: this.state.contactPerson,
       companyPhone: this.state.companyPhone,
       password: this.state.password
     };
@@ -130,7 +132,7 @@ class Register extends Component {
                     <div className="auth-error">{errors.password}</div>
                   </label>
                 </div>
-                <div className="auth-group">
+    {/*         <div className="auth-group">
                   <label>
                     <div className="auth-label">Повторите пароль</div>
                     <input
@@ -144,6 +146,7 @@ class Register extends Component {
                     <div className="auth-error">{errors.password}</div>
                   </label>
                 </div>
+    */}            
                 <div className="auth-group">
                   <label>
                     <div className="auth-label">Email</div>
@@ -163,13 +166,13 @@ class Register extends Component {
                     <div className="auth-label">Контактное лицо</div>
                     <input
                       onChange={this.onChange}
-                      value={this.state.companyPhone}
-                      error={errors.companyPhone}
-                      id="companyPhone"
-                      type="companyName"
+                      value={this.state.contactPerson}
+                      error={errors.contactPerson}
+                      id="contactPerson"
+                      type="contactPerson"
                       className="auth-input"
                     />
-                    <div className="auth-error">{errors.companyPhone}</div>
+                    <div className="auth-error">{errors.contactPerson}</div>
                   </label>
                 </div>
                 <div className="auth-group">
@@ -189,7 +192,7 @@ class Register extends Component {
                 <div>
                   <div className="auth-password__ask">
                     <label>
-                      <input type="checkbox" checked /> Запомнить меня
+                      <input type="checkbox" checked />Запомнить меня
                     </label>
                     <a
                       href="https://yandex.ru"
