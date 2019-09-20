@@ -26,6 +26,13 @@ module.exports = function validateRegisterInput(data) {
   if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
     errors.password = "Password must be at least 6 characters";
   }
+      // Second Password Checks
+//  if(Validator.isEmpty(data.password)) {
+//    errors.password = "Password must be at least 6 characters";
+//  }
+//  if(!Validator.isLength(data.password, {min: 3, max: 30})) {
+//    errors.password = "Password must be at least 6 characters";
+//  }
       // Company Name checks;
   if(Validator.isEmpty(data.companyName)) {
     errors.companyName = "Company Name is required";
