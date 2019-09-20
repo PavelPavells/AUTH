@@ -10,11 +10,11 @@ class Register extends Component {
     this.state = {
       name: "",
       email: "",
-      companyName: "",
-      companyINN: "",
-      contactPerson: "",
-      companyPhone: "",
-      password: "",
+      company_name: "",
+      company_inn: "",
+      contact_person: "",
+      company_phone: "",
+      pass: "",
       errors: {}
     };
   }
@@ -39,11 +39,11 @@ class Register extends Component {
     const newUser = {
       name: this.state.name,
       email: this.state.email,
-      companyName: this.state.companyName,
-      companyINN: this.state.companyINN,
-      contactPerson: this.state.contactPerson,
-      companyPhone: this.state.companyPhone,
-      password: this.state.password
+      company_name: this.state.company_name,
+      company_inn: this.state.company_inn,
+      contact_person: this.state.contact_person,
+      company_phone: this.state.company_phone,
+      pass: this.state.pass
     };
     this.props.registerUser(newUser, this.props.history);
   };
@@ -80,13 +80,13 @@ class Register extends Component {
                   <div className="auth-label">Наименование компании</div>
                   <input
                     onChange={this.onChange}
-                    value={this.state.companyName}
-                    error={errors.companyName}
-                    id="companyName"
-                    type="companyName"
+                    value={this.state.company_name}
+                    error={errors.company_name}
+                    id="company_name"
+                    type="company_name"
                     className="auth-input"
                   />
-                  <div className="auth-error">{errors.companyName}</div>
+                  <div className="auth-error">{errors.company_name}</div>
                 </label>
               </div>
               <div className="auth-group">
@@ -94,13 +94,13 @@ class Register extends Component {
                   <div className="auth-label">ИНН</div>
                   <input
                     onChange={this.onChange}
-                    value={this.state.companyINN}
-                    error={errors.companyINN}
-                    id="companyINN"
-                    type="companyName"
+                    value={this.state.company_inn}
+                    error={errors.company_inn}
+                    id="company_inn"
+                    type="company_name"
                     className="auth-input"
                   />
-                  <div className="auth-error">{errors.companyINN}</div>
+                  <div className="auth-error">{errors.company_inn}</div>
                 </label>
               </div>
               <div className="auth-group">
@@ -123,13 +123,13 @@ class Register extends Component {
                     <div className="auth-label">Пароль</div>
                     <input
                       onChange={this.onChange}
-                      value={this.state.password}
-                      error={errors.password}
-                      id="password"
-                      type="password"
+                      value={this.state.pass}
+                      error={errors.pass}
+                      id="pass"
+                      type="pass"
                       className="auth-input"
                     />
-                    <div className="auth-error">{errors.password}</div>
+                    <div className="auth-error">{errors.pass}</div>
                   </label>
                 </div>
     {/*         <div className="auth-group">
@@ -166,10 +166,10 @@ class Register extends Component {
                     <div className="auth-label">Контактное лицо</div>
                     <input
                       onChange={this.onChange}
-                      value={this.state.contactPerson}
-                      error={errors.contactPerson}
-                      id="contactPerson"
-                      type="contactPerson"
+                      value={this.state.contact_person}
+                      error={errors.contact_person}
+                      id="contact_person"
+                      type="contact_person"
                       className="auth-input"
                     />
                     {/*<div className="auth-error">{errors.contactPerson}</div>*/}
@@ -180,10 +180,10 @@ class Register extends Component {
                     <div className="auth-label">Телефон</div>
                     <input
                       onChange={this.onChange}
-                      value={this.state.companyPhone}
-                      error={errors.companyPhone}
-                      id="companyPhone"
-                      type="companyName"
+                      value={this.state.company_phone}
+                      error={errors.company_phone}
+                      id="company_phone"
+                      type="company_name"
                       className="auth-input"
                     />
                    {/*} <div className="auth-error">{errors.companyPhone}</div>*/}

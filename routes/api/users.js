@@ -24,19 +24,19 @@ router.post("/register", (req, res) => {
       return res.status(400).json({ email: "Email already exists" });
     } else {
       const newUser = new User({
-        companyName: req.body.companyName,
-        companyINN: req.body.companyINN,
+        company_name: req.body.company_name,
+        company_inn: req.body.company_inn,
         name: req.body.name,
-        password: req.body.password,
+        pass: req.body.pass,
         email: req.body.email,
-        contactPerson: req.body.contactPerson,
-        companyPhone: req.body.companyPhone,
+        account_info: req.body.account_info,
+        account_phone: req.body.account_phone,
       });
       // Hash password before saving in database
       bcrypt.genSalt(10, (err, salt) => {
-        bcrypt.hash(newUser.password, salt, (err, hash) => {
+        bcrypt.hash(newUser.pass, salt, (err, hash) => {
           if (err) throw err;
-          newUser.password = hash;
+          newUser.pass = hash;
           newUser
             .save()
             .then(user => res.json(user))
@@ -57,7 +57,7 @@ router.post("/login", (req, res) => {
     return res.status(400).json(errors);
   }
   const email = req.body.email;
-  const password = req.body.password;
+  const pass = req.body.pass;
   // Find user by email
   User.findOne({ email }).then(user => {
     // Check if user exists
@@ -65,7 +65,7 @@ router.post("/login", (req, res) => {
       return res.status(404).json({ emailnotfound: "Email not found" });
     }
     // Check password
-    bcrypt.compare(password, user.password).then(isMatch => {
+    bcrypt.compare(pass, user.pass).then(isMatch => {
       if (isMatch) {
         // User matched
         // Create JWT Payload

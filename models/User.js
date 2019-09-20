@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 // Create Schema
 const UserSchema = new Schema({
-  companyName: {
+  company_name: {
     type: String,
     required: true
   },
-  companyINN: {
+  company_inn: {
     type: Number,
     required: true
   },
@@ -14,7 +14,7 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
-  password: {
+  pass: {
     type: String,
     required: true
   },
@@ -22,11 +22,11 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
-  contactPerson: {
+  contact_person: {
     type: String,
     required: false
   },
-  companyPhone: {
+  company_phone: {
     type: String,
     required: false
   },
