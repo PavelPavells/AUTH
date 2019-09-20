@@ -8,13 +8,13 @@ class Register extends Component {
   constructor() {
     super();
     this.state = {
-      name: "",
-      email: "",
       company_name: "",
       company_inn: "",
+      name: "",
+      pass: "",
+      email: "",
       contact_person: "",
       company_phone: "",
-      pass: "",
       errors: {}
     };
   }
