@@ -172,7 +172,7 @@ class Register extends Component {
                       type="contactPerson"
                       className="auth-input"
                     />
-                    <div className="auth-error">{errors.contactPerson}</div>
+                    {/*<div className="auth-error">{errors.contactPerson}</div>*/}
                   </label>
                 </div>
                 <div className="auth-group">
@@ -186,7 +186,7 @@ class Register extends Component {
                       type="companyName"
                       className="auth-input"
                     />
-                    <div className="auth-error">{errors.companyPhone}</div>
+                   {/*} <div className="auth-error">{errors.companyPhone}</div>*/}
                   </label>
                 </div>
                 <div>

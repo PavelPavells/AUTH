@@ -19,6 +19,9 @@ module.exports = function validateRegisterInput(data) {
   if (Validator.isEmpty(data.companyINN)) {
     errors.companyINN = "Company INN field is required";
   }
+  if(Validator.isNumeric(data.companyINN, {no_symbols: false})) {
+    errors.companyINN = "Company INN must be Numbers";
+  }
   // Name checks
   if (Validator.isEmpty(data.name)) {
     errors.name = "Name field is required";

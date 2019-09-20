@@ -7,7 +7,7 @@ const UserSchema = new Schema({
     required: true
   },
   companyINN: {
-    type: String,
+    type: Number,
     required: true
   },
   name: {
@@ -18,21 +18,17 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
-  //password: {
-  //  type: String,
-  //  required: true
-  //},
   email: {
     type: String,
     required: true
   },
   contactPerson: {
     type: String,
-    required: true
+    required: false
   },
   companyPhone: {
     type: String,
-    required: true
+    required: false
   },
   date: {
     type: Date,
