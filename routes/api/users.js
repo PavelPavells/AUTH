@@ -24,12 +24,13 @@ router.post("/register", (req, res) => {
       return res.status(400).json({ email: "Email already exists" });
     } else {
       const newUser = new User({
-        name: req.body.name,
-        email: req.body.email,
         companyName: req.body.companyName,
         companyINN: req.body.companyINN,
+        name: req.body.name,
+        password: req.body.password,
+        email: req.body.email,
+        contactPerson: req.body.contactPerson,
         companyPhone: req.body.companyPhone,
-        password: req.body.password
       });
       // Hash password before saving in database
       bcrypt.genSalt(10, (err, salt) => {
