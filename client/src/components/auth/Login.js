@@ -9,7 +9,7 @@ class Login extends Component {
     super();
     this.state = {
       email: "",
-      password: "",
+      pass: "",
       errors: {}
     };
   }
@@ -36,16 +36,16 @@ class Login extends Component {
     e.preventDefault();
     const userData = {
       email: this.state.email,
-      password: this.state.password
+      pass: this.state.pass
     };
     this.props.loginUser(userData);
   };
-  fillDemoEmail = () => {
-    this.setState({ email: "test@test.com" });
-  };
-  fillDemoPassword = () => {
-    this.setState({ password: "test123" });
-  };
+  //fillDemoEmail = () => {
+  //  this.setState({ email: "test@test.com" });
+  //};
+  //fillDemoPassword = () => {
+  //  this.setState({ pass: "test123" });
+  //};
   render() {
     const { errors } = this.state;
     return (
@@ -96,14 +96,14 @@ class Login extends Component {
                   <div className="auth-label">Пароль</div>
                   <input
                     onChange={this.onChange}
-                    value={this.state.password}
-                    error={errors.password}
-                    id="password"
-                    type="password"
+                    value={this.state.pass}
+                    error={errors.pass}
+                    id="pass"
+                    type="pass"
                     className="auth-input"
                   />
                   <div className="auth-error">
-                    {errors.password}
+                    {errors.pass}
                     {errors.passwordincorrect}
                   </div>
                 </label>
